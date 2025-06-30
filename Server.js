@@ -78,10 +78,12 @@ app.delete('/blogs/:id', async (req, res) => {
 
 // ✅ POST Comment for a Blog
 app.post('/blogs/:id/comments', async (req, res) => {
-  const { title, content, author } = req.body;
+  const { text, author } = req.body;
+
   if (!text || !author) {
     return res.status(400).json({ error: 'Text and Author required' });
   }
+
   try {
     const newComment = new Comment({
       blogId: req.params.id,
@@ -94,6 +96,7 @@ app.post('/blogs/:id/comments', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
 
 // ✅ GET Comments for a Blog
 app.get('/blogs/:id/comments', async (req, res) => {
