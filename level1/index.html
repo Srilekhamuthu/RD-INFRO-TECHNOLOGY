@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Scheduler - Track Your Goals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Success Scheduler - Track Your Goals</h1>
+
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Enter a new task" required>
+
+            <div class="time-section">
+                <h3>Start Time</h3>
+                <input type="time" id="start-time" required>
+            </div>
+
+            <div class="time-section">
+                <h3>Achieving Time</h3>
+                <input type="time" id="task-time" required>
+            </div>
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Existing task list for newly added frontend tasks -->
+        <ul id="task-list"></ul>
+
+        <!-- ✅ ✅✅ NEW SECTION: Display tasks from Backend (MongoDB) -->
+        <h2>Saved Tasks from Backend:</h2>
+        <ul id="backend-task-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
